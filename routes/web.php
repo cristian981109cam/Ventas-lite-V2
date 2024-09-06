@@ -56,6 +56,8 @@ Route::middleware(['auth'])->group(function () {
     //reportes EXCEL
     Route::get('report/excel/{user}/{type}/{f1}/{f2}', [ExportController::class, 'reporteExcel']);
     Route::get('report/excel/{user}/{type}', [ExportController::class, 'reporteExcel']);
+
+    Route::get('/print/{request}', [App\Http\Controllers\PrintController::class, 'print'])->name('print.pdf');
 });
 
 

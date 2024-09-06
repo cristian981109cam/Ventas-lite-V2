@@ -24,22 +24,22 @@
 			noty(Msg, 2)
 		})
 
-		window.livewire.on('print-ticket', info => {	
-		
-		if(getBrowser() !='edge'){
-			window.open("print://" + info,  '_self').close()
-		} else {
-			 window.open("print://" + info)
-			//obj.close()
-		}
+		// window.livewire.on('print-ticket', info => {	
+			// if(getBrowser() !='edge'){
+				// 	window.open("print://" + info,  '_self').close()
+			// } else {
+				// 	 window.open("print://" + info)
+				// 	//obj.close()
+			// }
+		// })	
 
-	})
-		window.livewire.on('print-last-id', saleId => {					
-			window.open("print://" + saleId,  '_self')
-			//window.open("print://" + saleId,  '_self').close()//en chrome cierra la ventana
-		})
-		
-
+        window.livewire.on('print-ticket', saleId =>{
+            // var url = "{{ route('print.pdf', ['request' => 'temp']) }}"
+            var url = "{{ route('print.pdf', ['request' => 'temp']) }}"
+            url = url.replace('temp', saleId);
+            window.open(url,"popup", 'width=300,height=420');
+            // window.open("print://print2/" + saleId , '_blank');
+        })
 	})
 </script>
 <script>

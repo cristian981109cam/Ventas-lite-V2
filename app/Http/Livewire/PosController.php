@@ -161,9 +161,8 @@ class PosController extends Component
 			
 			$ticket = $this->buildTicket($sale);
 			$d = $this->Encrypt($ticket);
-			$this->emit('print-ticket', $d);
+			$this->emit('print-ticket',$sale->id);
 			
-			//$this->emit('print-ticket', $sale->id);
 
 		} catch (Exception $e) {
 			DB::rollback();
@@ -185,26 +184,6 @@ class PosController extends Component
 			->select('sale_details.*', 'p.name')
 			->where('sale_id', $sale->id)
 			->get();
-
-		// opcion 1
-		/*
-		$products ='';
-		$info = "folio: $sale->id|";
-		$info .= "date: $sale->created_at|";		
-		$info .= "cashier: {$sale->user->name}|";
-		$info .= "total: $sale->total|";
-		$info .= "items: $sale->items|";
-		$info .= "cash: $sale->cash|";
-		$info .= "change: $sale->change|";
-		foreach ($details as $product) {
-			$products .= $product->name .'}';
-			$products .= $product->price .'}';
-			$products .= $product->quantity .'}#';
-		}
-
-		$info .=$products;
-		return $info;
-		*/
 
 		// opcion 2
 		$sale->user_id = $sale->user->name;

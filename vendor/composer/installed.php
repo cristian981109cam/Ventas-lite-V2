@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'a90fedab6dfa5bee35c9d16df07bd0709d62fac3',
+        'reference' => '0c97dd6bcb8bf6540495d2eb26f22d8866a45cc2',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -460,7 +460,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'a90fedab6dfa5bee35c9d16df07bd0709d62fac3',
+            'reference' => '0c97dd6bcb8bf6540495d2eb26f22d8866a45cc2',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -548,9 +548,9 @@
             'dev_requirement' => false,
         ),
         'maatwebsite/excel' => array(
-            'pretty_version' => '3.1.56',
-            'version' => '3.1.56.0',
-            'reference' => '0381d0225b42c3f328d90f0dd05ca071fca3953f',
+            'pretty_version' => '3.1.57',
+            'version' => '3.1.57.0',
+            'reference' => '3571496c00ca1812c25ee19cda50faad216b7909',
             'type' => 'library',
             'install_path' => __DIR__ . '/../maatwebsite/excel',
             'aliases' => array(),
@@ -707,9 +707,9 @@
             'dev_requirement' => false,
         ),
         'phpoffice/phpspreadsheet' => array(
-            'pretty_version' => '1.29.0',
-            'version' => '1.29.0.0',
-            'reference' => 'fde2ccf55eaef7e86021ff1acce26479160a0fa0',
+            'pretty_version' => '1.29.1',
+            'version' => '1.29.1.0',
+            'reference' => '59ee38f7480904cd6487e5cbdea4d80ff2758719',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpoffice/phpspreadsheet',
             'aliases' => array(),
@@ -880,8 +880,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -1093,6 +1093,15 @@
             'install_path' => __DIR__ . '/../sebastian/version',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'setasign/fpdf' => array(
+            'pretty_version' => '1.8.6',
+            'version' => '1.8.6.0',
+            'reference' => '0838e0ee4925716fcbbc50ad9e1799b5edfae0a0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../setasign/fpdf',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'spatie/laravel-permission' => array(
             'pretty_version' => '4.4.3',
