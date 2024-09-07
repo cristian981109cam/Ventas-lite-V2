@@ -22,12 +22,13 @@
 		<table cellpadding="0" cellspacing="0" width="100%">
 			<tr>
 				<td colspan="2" class="text-center">
-					<span style="font-size: 25px; font-weight: bold;">Sistema LWPOS</span>
+					{{-- <span style="font-size: 25px; font-weight: bold;">Multiservicios EMSUB</span> --}}
+					<img src="{{ asset('assets/img/Multiservicios-EMSUB.jpeg') }}" alt="" class="invoice-logo">
 				</td>
 			</tr>
 			<tr>
-				<td width="30%" style="vertical-align: top; padding-top: 10px; position: relative">
-					<img src="{{ asset('assets/img/livewire_logo.png') }}" alt="" class="invoice-logo">
+				<td width="34%" style="vertical-align: top; padding-top: 10px; position: relative">
+					{{-- <img src="{{ asset('assets/img/Multiservicios-EMSUB.jpeg') }}" alt="" class="invoice-logo"> --}}
 				</td>
 
 				<td width="70%" class="text-left text-company" style="vertical-align: top; padding-top: 10px">
@@ -97,10 +98,10 @@
 		<table cellpadding="0" cellspacing="0" class="table-items" width="100%">
 			<tr>
 				<td width="20%">
-					<span>Sistema LWPOS v1</span>
+					<span>Multiservicios EMSUB V4.2</span>
 				</td>
 				<td width="60%" class="text-center">
-					luisfax.com
+					kevincalderon.com
 				</td>
 				<td class="text-center" width="20%">
 					página <span class="pagenum"></span>				

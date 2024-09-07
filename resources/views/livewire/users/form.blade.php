@@ -6,7 +6,7 @@
 	<div class="form-group">
 		<label >Nombre</label>
 		<input type="text" wire:model.lazy="name" 
-		class="form-control" placeholder="ej: Luis Fax"  >
+		class="form-control" placeholder="ej: nombre"  >
 		@error('name') <span class="text-danger er">{{ $message}}</span>@enderror
 	</div>
 </div>
@@ -22,7 +22,7 @@
 	<div class="form-group">
 		<label >Email</label>
 		<input type="text" wire:model.lazy="email" 
-		class="form-control" placeholder="ej: luisfaax@gmail.com"  >
+		class="form-control" placeholder="ej: kevincalderon@gmail.com"  >
 		@error('email') <span class="text-danger er">{{ $message}}</span>@enderror
 	</div>
 </div>

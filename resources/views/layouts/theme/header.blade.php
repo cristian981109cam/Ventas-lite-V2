@@ -2,9 +2,10 @@
     <header class="header navbar navbar-expand-sm">
         <ul class="navbar-item flex-row">
             <li class="nav-item theme-logo">
-                <a href="{{url('home')}}">
-                    <img src="assets/img/livewire_logo.png" class="navbar-logo" alt="logo">
-                    <b style="font-size: 19px; color:#3B3F5C">LWPOS</b>
+                <a href="{{url('home')}}" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <img src="assets/img/Multiservicios-EMSUB.jpeg" class="navbar-logo" alt="logo">
+                    {{-- <b style="font-size: 19px; color:#3B3F5C">Multiservicios EMSUB</b> --}}
+                    <p style="font-size: 12px; color:#3B3F5C; text-align: center;">Multiservicios EMSUB</p>
                 </a>
             </li>
         </ul>
@@ -32,7 +33,7 @@
                     <div class="dropdown-menu position-absolute animated fadeInUp" aria-labelledby="userProfileDropdown">
                         <div class="user-profile-section">
                             <div class="media mx-auto">
-                                <img src="assets/img/lara_logo.png" class="img-fluid mr-2" alt="avatar">
+                                <img src="assets/img/escudo_emsub.png" class="img-fluid mr-2" alt="avatar">
                                 <div class="media-body">
                                     @auth
                                         <h5>{{ auth()->user()->name }}</h5>
