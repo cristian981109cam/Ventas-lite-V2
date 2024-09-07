@@ -321,7 +321,7 @@ code {
   margin-left: 25px;
   margin-right: 65px; }
   .navbar .navbar-item .nav-item.theme-logo a img {
-    width: 56px;
+    /* width: 100px; */
     height: 56px;
     border-radius: 5px; }
 

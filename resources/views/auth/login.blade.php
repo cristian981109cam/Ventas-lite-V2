@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>Sistema de Ventas LWPOS</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico"/>
+    <title>Multiservicios EMSUB</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/Multiservicios-EMSUB.ico"/>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -26,7 +26,7 @@
                     <div class="form-content">
 
                         <h1 class="text-center"><span class="brand-name"><b>Iniciar sesión</b></span></h1>   
-                        <h1 class="text-center"><span class="brand-name">Sistema ***.</span></h1>                           
+                        <h1 class="text-center"><span class="brand-name">Multiservicios EMSUB.</span></h1>                           
                         <form class="text-left mt-5" action="{{ route('login') }}" method="POST">
                               @csrf
                             <div class="form" >
@@ -89,7 +89,7 @@
         </div>
     </div>
     <div class="form-image">
-        <a href="https://www.youtube.com/playlist?list=PLJjetMSzCM-oklVD-W3yVilbEXAbOk2Ns" target="_blank">
+        <a href="" target="_blank">
         <div class="l-image">
         </div>
     </a>
