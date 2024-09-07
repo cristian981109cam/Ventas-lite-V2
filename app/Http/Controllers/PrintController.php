@@ -24,34 +24,44 @@ class PrintController extends Controller
         $ancho = 7;
                 // $pdf = new FPDF();
         $pdf->AddPage(); 
-        $pdf->SetFont('Arial','B',8);   
-
+        
         $pdf->setY(5);
+        $pdf->setX(40);
+        $pdf->SetFont('Arial','B',8);   
+        $pdf->Image('assets/img/Multiservicios-EMSUB.jpeg' , 22,8,40);
+        $pdf->Ln(20);
+
+        $pdf->setY(20);
         $pdf->setX(25);
         $pdf->Cell(35,$ancho,utf8_decode('MULTISERVICIOS EMSUB'),0,0,'C');
-        $pdf->setY(8);
+
+        $pdf->setY(23);
         $pdf->setX(25);
         $pdf->Cell(35,$ancho,utf8_decode('IBAGUE, TOLIMA'),0,0,'C');
-        $pdf->setY(11);
+
+        $pdf->setY(26);
         $pdf->setX(25);
         $pdf->Cell(35,$ancho,utf8_decode('NIT: *********'),0,0,'C');
-        $pdf->setY(14);
+
+        $pdf->setY(29);
         $pdf->setX(25);
         $pdf->Cell(35,$ancho,utf8_decode('TELEFONO: 3*********'),0,0,'C');
-        $pdf->Ln(8);
 
-        $pdf->setY(22);
+
+        $pdf->Ln(10);
+
+        $pdf->setY(32);
         $pdf->setX(7);
         $pdf->Cell(20,$ancho,utf8_decode('FOLIO: #'). $request,0,0,'C');
-        $pdf->setY(25);
+        $pdf->setY(35);
         $pdf->setX(15);
         $pdf->Cell(20,$ancho,utf8_decode('FECHA: ').date('d-m-Y H:i'),0,0,'C');
 
-        $pdf->setY(28);
+        $pdf->setY(38);
         $pdf->setX(18);
         $pdf->Cell(20,$ancho,utf8_decode('ATIENDE: ').auth()->user()->name,'B',0,'C');
 
-        $pdf->setY(37);
+        $pdf->setY(45);
         $pdf->setX(20);
         $pdf->Cell(35,$ancho,utf8_decode('Sistema LWPOS'),'B',0,'C');
         $pdf->Ln(8);
