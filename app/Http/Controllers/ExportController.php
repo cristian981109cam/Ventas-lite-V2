@@ -29,37 +29,11 @@ class ExportController extends Controller
        }
 
 
-       if($userId == 0) 
-       {
-        $data = Sale::join('users as u','u.id','sales.user_id')
-        ->select('sales.*','u.name as user')
-        ->whereBetween('sales.created_at', [$from, $to])
-        ->get();
-    } else {
-        $data = Sale::join('users as u','u.id','sales.user_id')
-        ->select('sales.*','u.name as user')
-        ->whereBetween('sales.created_at', [$from, $to])
-        ->where('user_id', $userId)
-        ->get();
-    }
+        $user = $userId == 0 ? 'Todos' : User::find($userId)->name;
+        $pdf = PDF::loadView('pdf.reporte', compact('data', 'reportType', 'user', 'dateFrom', 'dateTo'));
 
-    $user = $userId == 0 ? 'Todos' : User::find($userId)->name;
-    $pdf = PDF::loadView('pdf.reporte', compact('data','reportType','user','dateFrom','dateTo'));
-
-/*
-    $pdf = new DOMPDF();
-    $pdf->setBasePath(realpath(APPLICATION_PATH . '/css/'));
-    $pdf->loadHtml($html);
-    $pdf->render();
-    */
-    /*
-    $pdf->set_protocol(WWW_ROOT);
-    $pdf->set_base_path('/');
-*/
-
-        return $pdf->stream('salesReport.pdf'); // visualizar
-        //$customReportName = 'salesReport_'.Carbon::now()->format('Y-m-d').'.pdf';
-        //return $pdf->download($customReportName); //descargar
+        return $pdf->stream('saleReport.pdf'); //Visualizar
+    
 
     }
 
