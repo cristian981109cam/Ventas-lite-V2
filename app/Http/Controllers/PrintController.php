@@ -28,16 +28,16 @@ class PrintController extends Controller
 
         $pdf->setY(5);
         $pdf->setX(25);
-        $pdf->Cell(35,$ancho,utf8_decode(' LFAX COMPANY'),0,0,'C');
+        $pdf->Cell(35,$ancho,utf8_decode('MULTISERVICIOS EMSUB'),0,0,'C');
         $pdf->setY(8);
         $pdf->setX(25);
         $pdf->Cell(35,$ancho,utf8_decode('IBAGUE, TOLIMA'),0,0,'C');
         $pdf->setY(11);
         $pdf->setX(25);
-        $pdf->Cell(35,$ancho,utf8_decode('RFC: 100314515'),0,0,'C');
+        $pdf->Cell(35,$ancho,utf8_decode('NIT: *********'),0,0,'C');
         $pdf->setY(14);
         $pdf->setX(25);
-        $pdf->Cell(35,$ancho,utf8_decode('TELEFONO: 3124512545'),0,0,'C');
+        $pdf->Cell(35,$ancho,utf8_decode('TELEFONO: 3*********'),0,0,'C');
         $pdf->Ln(8);
 
         $pdf->setY(22);
@@ -107,6 +107,13 @@ class PrintController extends Controller
         $pdf->SetFont('Arial','B',8);
         $pdf->setX(20);
         $pdf->Cell(55,$ancho+6,utf8_decode('¡GRACIAS POR TU COMPRA!'));
+        
+        $pdf->Ln(3);
+
+        $pdf->setX(5);
+        $pdf->SetFont('Arial','B',8);
+        $pdf->setX(22);
+        $pdf->Cell(55,$ancho+6,utf8_decode('MULTISERVICIOS EMSUB'));
 
         $pdf->Output();
         // $pdf -> Output('Ticket.pdf', 'I', true);
