@@ -37,7 +37,7 @@
             // var url = "{{ route('print.pdf', ['request' => 'temp']) }}"
             var url = "{{ route('print.pdf', ['request' => 'temp']) }}"
             url = url.replace('temp', saleId);
-            window.open(url,"popup", 'width=300,height=420');
+            window.open(url,"popup", 'width=400,height=750');
             // window.open("print://print2/" + saleId , '_blank');
         })
 	})

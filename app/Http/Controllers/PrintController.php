@@ -19,7 +19,7 @@ class PrintController extends Controller
             ->select('sale_details.*', 'p.name as name_product')
             ->where('sale_id', $request)
             ->get();
-        $pdf = new FPDF('P','mm',array(80,150)); // Tamaño tickt 80mmx 150 mm (largo aprox)
+        $pdf = new FPDF('P','mm',array(80,170)); // Tamaño tickt 80mmx 150 mm (largo aprox)
         // $pdf = new FPDF(); // Tamaño tickt 80mmx 150 mm (largo aprox)
         $ancho = 7;
                 // $pdf = new FPDF();
@@ -50,23 +50,22 @@ class PrintController extends Controller
 
         $pdf->Ln(10);
 
-        $pdf->setY(32);
-        $pdf->setX(7);
-        $pdf->Cell(20,$ancho,utf8_decode('FOLIO: #'). $request,0,0,'C');
         $pdf->setY(35);
-        $pdf->setX(15);
-        $pdf->Cell(20,$ancho,utf8_decode('FECHA: ').date('d-m-Y H:i'),0,0,'C');
-
+        $pdf->setX(5);
+        $pdf->Cell(20,$ancho,utf8_decode(' FOLIO: #'). $request,0,0,'C');
         $pdf->setY(38);
-        $pdf->setX(18);
-        $pdf->Cell(20,$ancho,utf8_decode('ATIENDE: ').auth()->user()->name,'B',0,'C');
+        $pdf->setX(13);
+        $pdf->Cell(20,$ancho,utf8_decode(' FECHA: ').date('d-m-Y H:i'),0,0,'C');
 
-        $pdf->setY(45);
-        $pdf->setX(20);
-        $pdf->Cell(35,$ancho,utf8_decode('Sistema LWPOS'),'B',0,'C');
+        $pdf->setY(41);
+        $pdf->setX(16);
+        $pdf->Cell(20,$ancho,utf8_decode(' ATIENDE: ').auth()->user()->name,0,0,'C');
+
+
         $pdf->Ln(8);
 
-
+        $pdf->setX(5);
+        $pdf->Cell(60,1,'---------------------------------------------------------------------',0,0);
         
 
         $pdf->SetFont('Arial','',7);   
@@ -79,6 +78,10 @@ class PrintController extends Controller
         $pdf->Cell(10, 7, utf8_decode('Total'),0,1,'C',0);
 
         //              DATOS
+        $pdf->setX(5);
+        $pdf->Cell(60,0,'-------------------------------------------------------------------------------',0,0);
+        $pdf->Ln(4);
+
         $total = 0;
         foreach($detalle as $val){
             $pdf->setX(5);
@@ -89,7 +92,13 @@ class PrintController extends Controller
             $total += ($val->price*$val->quantity);
         }
 
+        $pdf->Ln(3);
+
+        $pdf->setX(5);
+        $pdf->Cell(60,1,'-------------------------------------------------------------------------------',0,0);
+
         $pdf->Ln(5);
+
         //              TOTAL
         $pdf->setX(5);
         $pdf->SetFont('Arial','B',8);
@@ -113,17 +122,17 @@ class PrintController extends Controller
         
         $pdf->Ln(10);
 
-        $pdf->setX(5);
+
         $pdf->SetFont('Arial','B',8);
-        $pdf->setX(20);
-        $pdf->Cell(55,$ancho+6,utf8_decode('¡GRACIAS POR TU COMPRA!'));
+        $pdf->setX(5);
+        $pdf->Cell(55,$ancho+6,utf8_decode('¡GRACIAS POR TU COMPRA, VUELVE PRONTO!'));
         
         $pdf->Ln(3);
 
-        $pdf->setX(5);
-        $pdf->SetFont('Arial','B',8);
-        $pdf->setX(22);
-        $pdf->Cell(55,$ancho+6,utf8_decode('MULTISERVICIOS EMSUB'));
+        // $pdf->setX(5);
+        // $pdf->SetFont('Arial','B',8);
+        // $pdf->setX(22);
+        // $pdf->Cell(55,$ancho+6,utf8_decode('MULTISERVICIOS EMSUB'));
 
         $pdf->Output();
         // $pdf -> Output('Ticket.pdf', 'I', true);
